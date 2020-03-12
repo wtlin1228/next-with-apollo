@@ -25,5 +25,20 @@ Library:
 
 Usage:
 
-`npx @svgr/cli ./src/assets/icons/clock-icon.svg > ./scr/svgrs/clock-icon.js`
++ Generate svg component
 
+  `npx @svgr/cli ./src/assets/icons/clock-icon.svg > ./src/svgrs/clock-icon.js`
+
++ Use generated svg component
+
+  ```javaScript
+  import React from 'react'
+  import SvgHome from '../svgrs/home-icon'
+
+  const Foo = () => {
+    return (
+      // ...
+      <SvgHome />
+    )
+  }
+  ```

@@ -26,3 +26,28 @@ You can find documents in the `./documents`
 + Polyfill
 + Router
 + Styles
+
+## Convention
+
+Import sequences
+
+```js
+// node_modules(ignore comment)
+import React from 'react';
+
+// utils
+
+// assets
+
+// actions
+
+// components
+
+// self-defined-components
+
+function Foo() {
+  //...
+}
+
+export default Foo;
+```

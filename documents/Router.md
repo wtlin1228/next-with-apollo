@@ -2,9 +2,9 @@
 
 ## Third Party
 
-### Router - @reach/router
+### Router - next/router
 
 Library: 
 
-+ [@reach/router](https://github.com/reach/router)
++ [next/router](https://nextjs.org/docs/api-reference/next/router)
 
