@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import { useQuery } from '@apollo/react-hooks'
-import gql from 'graphql-tag'
 
 // utils
 import withApollo from '../lib/graphql/apollo'
@@ -8,11 +7,7 @@ import withApollo from '../lib/graphql/apollo'
 // assets
 
 // actions
-export const GET_CART_ITEMS = gql`
-  query GetCartItems {
-    cartItems @client
-  }
-`
+import { GET_CART_ITEMS } from '../queries'
 
 // components
 import { PageContainer, Header, Loading, Footer } from '../components'

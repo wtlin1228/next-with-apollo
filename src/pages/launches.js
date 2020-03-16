@@ -55,9 +55,6 @@ const Launches = () => {
   if (loading) return <Loading />
   if (error || !data) return <p>ERROR</p>
 
-  // Debug
-  // console.log(data)
-
   return (
     <Fragment>
       <PageContainer>
