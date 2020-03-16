@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import { useQuery } from '@apollo/react-hooks'
+import { withRouter } from 'next/router'
 import gql from 'graphql-tag'
 
 // utils
@@ -12,7 +13,7 @@ import { LAUNCH_TILE_DATA } from './launches'
 export const GET_LAUNCH_DETAILS = gql`
   query LaunchDetails($launchId: ID!) {
     launch(id: $launchId) {
-      isInCart @client
+      # isInCart @client
       site
       rocket {
         type
@@ -35,9 +36,9 @@ import { ActionButton } from '../containers'
 
 // self-defined-components
 
-const Launch = ({ launchId }) => {
+const Launch = ({ router }) => {
   const { data, loading, error } = useQuery(GET_LAUNCH_DETAILS, {
-    variables: { launchId }
+    variables: { launchId: router.query.id }
   })
 
   if (loading) return <Loading />
@@ -67,4 +68,4 @@ const Launch = ({ launchId }) => {
   )
 }
 
-export default withApollo({ ssr: true })(Launch)
+export default withApollo({ ssr: true })(withRouter(Launch))

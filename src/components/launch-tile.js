@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { Link } from '@reach/router'
+import Link from 'next/link'
 
 // utils
 const backgrounds = [galaxy, iss, moon]
@@ -26,7 +26,7 @@ export const cardClassName = css`
   background-position: center;
 `
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.a`
   ${cardClassName}
   display: block;
   height: 193px;
@@ -40,15 +40,16 @@ const StyledLink = styled(Link)`
 const LaunchTile = ({ launch }) => {
   const { id, mission, rocket } = launch
   return (
-    <StyledLink
-      to={`/launch/${id}`}
-      style={{
-        backgroundImage: getBackgroundImage(id)
-      }}
-    >
-      <h3>{mission ? mission.name : ''}</h3>
-      <h5>{rocket && rocket.name}</h5>
-    </StyledLink>
+    <Link href={`/launch?id=${id}`}>
+      <StyledLink
+        style={{
+          backgroundImage: getBackgroundImage(id)
+        }}
+      >
+        <h3>{mission ? mission.name : ''}</h3>
+        <h5>{rocket && rocket.name}</h5>
+      </StyledLink>
+    </Link>
   )
 }
 
