@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
-// Todo: integrate RouteComponentProps into PropTypes
-import { RouteComponentProps } from '@reach/router'
 
 // utils
 import withApollo from '../lib/graphql/apollo'
@@ -58,7 +56,7 @@ const Launches = () => {
   if (error || !data) return <p>ERROR</p>
 
   // Debug
-  console.log(data)
+  // console.log(data)
 
   return (
     <Fragment>

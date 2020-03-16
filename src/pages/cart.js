@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
-// Todo: integrate RouteComponentProps into PropTypes
-import { RouteComponentProps } from '@reach/router'
 
 // utils
 import withApollo from '../lib/graphql/apollo'

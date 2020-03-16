@@ -61,17 +61,17 @@ function initApolloClient(initialState, ctx) {
   // isn't shared between connections (which would be bad)
   if (typeof window == 'undefined') {
     // Debug
-    console.log(`initApolloClient: server side, always make a new client`)
+    // console.log(`initApolloClient: server side, always make a new client`)
 
     return createApolloClient(initialState, ctx)
   }
 
   // Debug
-  console.log(
-    `initApolloClient: client side ${
-      globalApolloClient ? 'reuse client' : 'make a new client'
-    }`
-  )
+  // console.log(
+  //   `initApolloClient: client side ${
+  //     globalApolloClient ? 'reuse client' : 'make a new client'
+  //   }`
+  // )
 
   // Reuse client on the client-side
   if (!globalApolloClient) {
