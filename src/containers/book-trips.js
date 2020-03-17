@@ -39,9 +39,9 @@ const BookTrips = ({ cartItems }) => {
   })
 
   return data && data.bookTrips && !data.bookTrips.success ? (
-    <p data-testid='message'>{data.bookTrips.message}</p>
+    <p data-testid="message">{data.bookTrips.message}</p>
   ) : (
-    <Button onClick={() => bookTrips()} data-testid='book-button'>
+    <Button onClick={() => bookTrips()} data-testid="book-button">
       Book All
     </Button>
   )

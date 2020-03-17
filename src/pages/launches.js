@@ -50,7 +50,27 @@ import {
 // self-defined-components
 
 const Launches = () => {
-  const { data, loading, error, fetchMore } = useQuery(GET_LAUNCHES)
+  const { data, loading, error, fetchMore, refetch, networkStatus } = useQuery(
+    GET_LAUNCHES,
+    {
+      notifyOnNetworkStatusChange: true,
+      onCompleted: data => {
+        console.log(data)
+      }
+    }
+  )
+
+  // checkout the network status:
+  // https://github.com/apollographql/apollo-client/blob/master/src/core/networkStatus.ts
+  if (networkStatus === 4)
+    return (
+      <Fragment>
+        <PageContainer>
+          <Header />
+          <Loading />
+        </PageContainer>
+      </Fragment>
+    )
 
   if (loading) return <Loading />
   if (error || !data) return <p>ERROR</p>
@@ -59,6 +79,9 @@ const Launches = () => {
     <Fragment>
       <PageContainer>
         <Header />
+        <div style={{ marginBottom: 20 }}>
+          <Button onClick={() => refetch()}>Refetch!</Button>
+        </div>
         {data.launches &&
           data.launches.launches &&
           data.launches.launches.map(launch => (

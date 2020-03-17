@@ -21,12 +21,14 @@ const Cart = () => {
   if (loading) return <Loading />
   if (error) return <p>ERROR: {error.message}</p>
 
+  console.log(data)
+
   return (
     <Fragment>
       <PageContainer>
         <Header>My Cart</Header>
         {!data || (!!data && data.cartItems.length === 0) ? (
-          <p data-testid='empty-message'>No items in your cart</p>
+          <p data-testid="empty-message">No items in your cart</p>
         ) : (
           <Fragment>
             {!!data &&

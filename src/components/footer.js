@@ -37,19 +37,19 @@ export default function Footer() {
   return (
     <Container>
       <InnerContainer>
-        <Link href='/launches'>
+        <Link href="/launches">
           <MenuItem>
             <SvgHome />
             Home
           </MenuItem>
         </Link>
-        <Link href='/cart'>
+        <Link href="/cart">
           <MenuItem>
             <SvgCart />
             Cart
           </MenuItem>
         </Link>
-        <Link href='/profile'>
+        <Link href="/profile">
           <MenuItem>
             <SvgProfile />
             Profile

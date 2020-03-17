@@ -24,7 +24,7 @@ const LogoutButton = () => {
   const client = useApolloClient()
   return (
     <StyledButton
-      data-testid='logout-button'
+      data-testid="logout-button"
       onClick={() => {
         client.writeData({ data: { isLoggedIn: false } })
         localStorage.clear()

@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 
 function SvgRocket(props) {
   return (
@@ -30,8 +30,7 @@ function SvgRocket(props) {
       <circle cx={217.5} cy={241} r={2.5} />
       <circle cx={56.4} cy={241} r={2.5} />
     </svg>
-  );
+  )
 }
 
-export default SvgRocket;
-
+export default SvgRocket

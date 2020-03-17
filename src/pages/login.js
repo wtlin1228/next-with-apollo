@@ -1,4 +1,5 @@
 import React from 'react'
+import Router from 'next/router'
 import { useApolloClient, useMutation } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 
@@ -25,6 +26,7 @@ function Login() {
     onCompleted({ login }) {
       localStorage.setItem('token', login)
       client.writeData({ data: { isLoggedIn: true } })
+      Router.push('/launches')
     }
   })
 

@@ -114,13 +114,13 @@ export default class LoginForm extends Component {
         <StyledForm onSubmit={e => this.onSubmit(e)}>
           <StyledInput
             required
-            type='email'
-            name='email'
-            placeholder='Email'
-            data-testid='login-input'
+            type="email"
+            name="email"
+            placeholder="Email"
+            data-testid="login-input"
             onChange={e => this.onChange(e)}
           />
-          <Button type='submit'>Log in</Button>
+          <Button type="submit">Log in</Button>
         </StyledForm>
       </Container>
     )

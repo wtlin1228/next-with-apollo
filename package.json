@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "commit": "npx git-cz"
+    "commit": "npx git-cz",
+    "format": "prettier \"src/**/*.{js,html}\" --write"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.3",
