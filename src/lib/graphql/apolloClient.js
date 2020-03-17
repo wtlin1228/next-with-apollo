@@ -17,6 +17,9 @@ export default function createApolloClient(initialState = {}, ctx = {}) {
 
   const link = new HttpLink({
     uri: 'http://localhost:8888/graphql', // Server URL (must be absolute)
+    headers: {
+      authorization: isBrowser ? localStorage.getItem('token') : ''
+    },
     credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
     fetch
   })
